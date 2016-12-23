@@ -15,7 +15,7 @@ namespace InfinityScroll.Pages
     public class LocationListing : ContentPage
     {
         ListView lvLocations;
-        int _NumberOfRecords = 15;
+        int _NumberOfRecords = 20;
         LoadingIndicator _LoaderImage;
         bool _IsLoad;
         List<LocationsModel> LocationList = new List<LocationsModel>();
@@ -49,7 +49,8 @@ namespace InfinityScroll.Pages
 
                 lvLocations = new ListView
                 {
-                    HasUnevenRows = true
+                    HasUnevenRows = true,
+                    SeparatorColor = Color.Gray
                 };
 
                 lvLocations.ItemsSource = Items;
@@ -74,7 +75,6 @@ namespace InfinityScroll.Pages
                     LocationsModel obj = (LocationsModel)e.SelectedItem;
 
                     ((ListView)sender).SelectedItem = null;
-                    //Navigation.PushAsync(App.PartDetailsPage(obj.Make, obj.Part, obj.PartImageUrl));
                 };
 
                 _LoaderImage = new LoadingIndicator();
