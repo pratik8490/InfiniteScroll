@@ -17,7 +17,7 @@ namespace InfinityScroll.Services
             List<LocationsModel> result = new List<LocationsModel>();
             try
             {
-                using (HttpClient client = new HttpClient { BaseAddress = new Uri("http://www.flavortownusa.com/") })
+                using (HttpClient client = new HttpClient { BaseAddress = new Uri("http://www.abc.com/") })
                 {
                     string requestUri = String.Format("/api/locations?aid=getbyrecent");
                     HttpResponseMessage response = await client.GetAsync(requestUri);
